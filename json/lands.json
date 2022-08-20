@@ -1,0 +1,58 @@
+{
+  "lands": [
+    {
+      "id": "l-1",
+      "img": "./lands/land-1.jpg",
+      "landName": "Sacred Spirit Realm",
+      "price": 1045.67
+    },
+    {
+      "id": "l-2",
+      "img": "./lands/land-2.jpg",
+      "landName": "Hidden River Of Atlantis",
+      "price": 1045.67
+    },
+    {
+      "id": "l-3",
+      "img": "./lands/land-3.jpg",
+      "landName": "Frates, The Ancient City Of Dragons",
+      "price": 1045.67
+    },
+    {
+      "id": "l-4",
+      "img": "./lands/land-4.jpg",
+      "landName": "Peak, Wizard Tower",
+      "price": 1045.67
+    },
+    {
+      "id": "l-5",
+      "img": "./lands/land-5.jpg",
+      "landName": "Heaven's Northern Continent",
+      "price": 1045.67
+    },
+    {
+      "id": "l-6",
+      "img": "./lands/land-6.jpg",
+      "landName": "The Valley Of Life And Death",
+      "price": 1045.67
+    },
+    {
+      "id": "l-7",
+      "img": "./lands/land-7.jpg",
+      "landName": "Dwarven Kingdom",
+      "price": 1045.67
+    },
+    {
+      "id": "l-8",
+      "img": "./lands/land-8.jpg",
+      "landName": "Elven City",
+      "price": 1045.67
+    },
+    {
+      "id": "l-9",
+      "img": "./lands/land-9.jpg",
+      "landName": "Goblin Trench",
+      "price": 1045.67
+    }
+  ]
+}

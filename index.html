@@ -11,7 +11,7 @@
   </head>
   <body>
     <!-- navbar -->
-    <nav class="navbar">
+    <nav class="navbar navbar-store">
       <div class="nav-center">
         
         <div class="menu-btn" id="menu-toggle">
@@ -24,16 +24,16 @@
         
         <ul class="nav-menu">
           <li class="nav-item"><a href="#" class="nav-link">home</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">lands</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">weapons</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">armors</a></li>
+          <li class="nav-item"><a href="#lands" class="nav-link">lands</a></li>
+          <li class="nav-item"><a href="#weapons" class="nav-link">weapons</a></li>
+          <li class="nav-item"><a href="#familiars" class="nav-link">familiars</a></li>
           <li class="nav-item"><a href="#" class="nav-link">about</a></li>
         </ul>
         
         <div class="cart-toggle">
           <div class="cart-btn">
             <i class="fa-solid fa-cart-shopping"></i>
-            <span class="cart-items">1</span>
+            <span class="cart-items">6</span>
           </div>
           <i class="fa-solid fa-xmark"></i>
         </div>
@@ -41,6 +41,64 @@
       </div>
     </nav>
     <!-- end of navbar -->
+    <!-- lands -->
+    <section class="lands" id="lands">
+      <h1>lands</h1>
+      <div class="lands-container">
+        <div class="land-item">
+          <div class="land-img" style="background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.4) 100%), url('./lands/land-1.jpg');">
+            <img class="remove-cart" data-id="1" src="./images/remove-cart.png" alt="">
+            <img class="add-cart" data-id="1" src="./images/add-cart.png" alt="">
+          </div>
+          <div class="land-content">
+            <i data-id="1" class="fa-solid fa-circle-info"></i>
+            <h4>land name</h4>
+            <h5>$69.99</h5>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end of lands -->
+    <!-- lands -->
+    <section class="lands" id="familiar">
+      <h1>weapons</h1>
+      <div class="lands-container">
+        <div class="land-item">
+          <div class="land-img" style="background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.4) 100%), url('./weapons/weapon-5.jpg');">
+            <img class="remove-cart" data-id="1" src="./images/remove-cart.png" alt="">
+            <img class="add-cart" data-id="1" src="./images/add-cart.png" alt="">
+          </div>
+          <div class="land-content">
+            <i data-id="id" class="fa-solid fa-circle-info"></i>
+            <h4>land name</h4>
+            <h5>$69.99</h5>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end of lands -->
+    <!-- lands -->
+    <section class="lands" id="familiars">
+      <h1>familiars</h1>
+      <div class="lands-container">
+        <div class="land-item">
+          <div class="land-img" style="background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.4) 100%), url('./familiars/familiar-1.jpg');">
+            <img class="remove-cart" data-id="1" src="./images/remove-cart.png" alt="">
+            <img class="add-cart" data-id="1" src="./images/add-cart.png" alt="">
+          </div>
+          <div class="land-content">
+            <i data-id="1" class="fa-solid fa-circle-info"></i>
+            <h4>land name</h4>
+            <h5>$69.99</h5>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end of lands -->
+    
+    
+    
+    
     
     <script src="mech.js"></script>
   </body>
