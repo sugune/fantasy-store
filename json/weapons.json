@@ -4,61 +4,61 @@
       "id": "w-1",
       "img": "./weapons/weapon-1.jpg",
       "weaponName": "Excalibur",
-      "price": 100.31
+      "price": 6512.96
     },
     {
       "id": "w-2",
       "img": "./weapons/weapon-2.jpg",
       "weaponName": "Peacekeeper",
-      "price": 989.8
+      "price": 9765.69
     },
     {
       "id": "w-3",
       "img": "./weapons/weapon-3.jpg",
       "weaponName": "Devide and Conquer, Betrayers of Blessings",
-      "price": 989.8
+      "price": 12677.69
     },
     {
       "id": "w-4",
       "img": "./weapons/weapon-4.jpg",
       "weaponName": "Decimation, Slayer of the Empty Void",
-      "price": 989.8
+      "price": 17009.26
     },
     {
       "id": "w-5",
       "img": "./weapons/weapon-5.jpg",
       "weaponName": "Thunderstorm Carver",
-      "price": 989.8
+      "price": 4657.04
     },
     {
       "id": "w-6",
       "img": "./weapons/weapon-6.jpg",
       "weaponName": "Bloodrage, Reaper of Ending Misery",
-      "price": 989.8
+      "price": 3677.11
     },
     {
       "id": "w-7",
       "img": "./weapons/weapon-7.jpg",
       "weaponName": "Heartstriker, Incarnation of Eternal Damnation",
-      "price": 989.8
+      "price": 4672.10
     },
     {
       "id": "w-8",
       "img": "./weapons/weapon-8.jpg",
       "weaponName": "Ghostwalker, Token of Grace",
-      "price": 989.8
+      "price": 6518.09
     },
     {
       "id": "w-9",
       "img": "./weapons/weapon-9.jpg",
       "weaponName": "Shadowsteel, Runed Blade of Necromancy",
-      "price": 989.8
+      "price": 5167.20
     },
     {
       "id": "w-10",
       "img": "./weapons/weapon-10.jpg",
       "weaponName": "Chaos",
-      "price": 989.8
+      "price": 7179.08
     }
   ]
 }

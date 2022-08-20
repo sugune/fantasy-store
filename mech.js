@@ -37,7 +37,9 @@ menuBtn.addEventListener('click', () => {
 });
 
 
-
+window.addEventListener('DOMContentLoaded', () => {
+  
+});
 
 
 

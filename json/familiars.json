@@ -4,43 +4,43 @@
       "id": "f-1",
       "img": "./familiars/familiar-1.jpg",
       "familiarName": "Zeal, Founder Of Rebirth",
-      "price": 11678.88
+      "price": 29659.96
     },
     {
       "id": "f-2",
       "img": "./familiars/familiar-2.jpg",
       "familiarName": "Eirriss",
-      "price": 11678.88
+      "price": 30557.56
     },
     {
       "id": "f-3",
       "img": "./familiars/familiar-3.jpg",
       "familiarName": "Cyldrephae",
-      "price": 11678.88
+      "price": 25879.99
     },
     {
       "id": "f-4",
       "img": "./familiars/familiar-4.jpg",
       "familiarName": "Upel, Champion Of Dragons",
-      "price": 11678.88
+      "price": 16879.68
     },
     {
       "id": "f-5",
       "img": "./familiars/familiar-5.jpg",
       "familiarName": "Omrath, The Nocturnal",
-      "price": 11678.88
+      "price": 23856.56
     },
     {
       "id": "f-6",
       "img": "./familiars/familiar-6.jpg",
       "familiarName": "Saphyr, Protector Of The Sky",
-      "price": 11678.88
+      "price": 45467.26
     },
     {
       "id": "f-7",
       "img": "./familiars/familiar-7.jpg",
-      "familiarName": "Teonuss, Icebreath",
-      "price": 11678.88
+      "familiarName": "Heaven Wanderer, Teonuss",
+      "price": 24987.69
     }
   ]
 }
