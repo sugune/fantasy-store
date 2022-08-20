@@ -432,6 +432,7 @@ products
 
 .product-item h4 {
   margin-top: .5rem;
+  font-weight: 500;
 }
 
 .product-content {
