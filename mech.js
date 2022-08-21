@@ -3,6 +3,8 @@ const xbtn = document.querySelector('.fa-xmark');
 
 const menuBtn = document.querySelector('.menu-btn');
 const navMenu = document.querySelector('.nav-menu');
+const navbar = document.querySelector('.navbar-store');
+const links = document.querySelectorAll('.nav-menu a')
 
 const cartUp = document.querySelectorAll('.add-cart');
 const cartDown = document.querySelectorAll('.remove-cart');
@@ -36,10 +38,7 @@ xbtn.addEventListener('click', () => {
   xbtn.classList.remove('show-x');
 });
 
-menuBtn.addEventListener('click', () => {
-  menuBtn.classList.toggle('active');
-  navMenu.classList.toggle('show-menu');
-});
+let allGoods = [];
 
 class Goods {
   
@@ -84,6 +83,7 @@ class UI {
             <h5><img src="./images/coin-2.png" alt=""> ${good.price.toLocaleString("en-US")}</h5>
           </div>`;
       landsContainer.appendChild(div);
+      allGoods.push(good)
     });
   }
   
@@ -103,7 +103,8 @@ class UI {
             <h5><img src="./images/coin-2.png" alt=""> ${good.price.toLocaleString('en-US')}</h5>
           </div>`;
       familiarsContainer.appendChild(div);
-    })
+      allGoods.push(good)
+    });
   }
   
   displayWeapons(goods) {
@@ -122,6 +123,45 @@ class UI {
             <h5><img src="./images/coin-2.png" alt=""> ${good.price.toLocaleString('en-US')}</h5>
           </div>`;
       weaponsContainer.appendChild(div);
+      allGoods.push(good);
+    });
+  }
+  
+  navFunctionality() {
+    const navHeight = navbar.getBoundingClientRect().height;
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > navHeight) {
+        navbar.classList.add('sticky-nav');
+      } else {
+        navbar.classList.remove('sticky-nav')
+      }
+    });
+    this.toggleMenu();
+    this.accurateNavigation();
+  }
+  
+  accurateNavigation() {
+    links.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const id = link.getAttribute('href');
+        const element = document.querySelector(id);
+        const navHeight = navbar.getBoundingClientRect().height;
+        const destination = element.offsetTop;
+        window.scroll({
+          top: destination - navHeight
+        });
+        menuBtn.classList.toggle('active');
+        navMenu.classList.toggle('show-menu');
+        console.log(element.offsetTop)
+      })
+    });
+  }
+  
+  toggleMenu() {
+    menuBtn.addEventListener('click', () => {
+      menuBtn.classList.toggle('active');
+      navMenu.classList.toggle('show-menu');
     });
   }
   
@@ -138,6 +178,7 @@ window.addEventListener('DOMContentLoaded', () => {
   goods.getLands().then((data) => ui.displayLands(data));
   goods.getWeapons().then((data) => ui.displayWeapons(data));
   goods.getFamiliars().then((data) => ui.displayFamiliars(data));
+  ui.navFunctionality();
 });
 
 
