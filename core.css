@@ -48,6 +48,7 @@ Navbar
 
 .nav-center {
   width: 90%;
+  max-width: var(--max-width);
   height: 6rem;
   display: flex;
   justify-content: space-between;
@@ -167,9 +168,10 @@ Navbar
     width: 100vw;
     left: 0;
     flex-direction: column;
+    padding-bottom: 1rem;
     background-color: var(--bg-color-500);
     min-height: 50vh;
-    transition: all 300ms ease;
+    transition: all 500ms ease-in-out;
     top: -1000px;
     opacity: 0;
   }
@@ -373,10 +375,12 @@ products
 
 .products-container {
   width: 90%;
+  max-width: var(--max-width);
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   margin-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .product-item {
@@ -399,6 +403,12 @@ products
 
 .product-img:hover {
   transform: scale(1.020);
+}
+
+@media screen and (max-width: 500px) {
+  .product-img {
+    height: 200px;
+  }
 }
 
 .product-item i, .remove-cart, .add-cart {
@@ -435,15 +445,21 @@ products
   font-weight: 500;
 }
 
+.product-content h5 img {
+  width: 1rem;
+  height: 1rem;
+  margin-bottom: -.22rem;
+}
+
 .product-content {
   position: relative;
   width: 100%;
 }
 
-.product-content .fa-circle-info {
+.product-item .fa-circle-info {
   font-size: 1rem;
-  left: 1rem;
-  top: .1rem;
+  left: .5rem;
+  top: .5rem;
   cursor: pointer;
 }
 
@@ -462,6 +478,75 @@ products
 /* 
 --------
 end of products
+--------
+*/
+/* 
+--------
+footer
+--------
+*/
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 5rem;
+  background-color: var(--bg-color-400);
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1100px;
+}
+
+.footer p {
+  color: var(--primary-color-300);
+  font-size: .8rem;
+}
+
+.footer p span {
+  color: var(--primary-color-500);
+}
+
+.social-icons i{
+  color: var(--primary-color-500);
+  font-size: 24px;
+  margin: .5rem;
+}
+
+.social-icons {
+  width: 125px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo img {
+  width: 125px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 750px) {
+  .footer-container {
+    flex-direction: column;
+    gap: .7rem;
+    padding-bottom: 1rem;
+  }
+}
+
+
+/* 
+--------
+end of footer
 --------
 */
 

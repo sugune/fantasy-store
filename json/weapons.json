@@ -39,8 +39,8 @@
     {
       "id": "w-7",
       "img": "./weapons/weapon-7.jpg",
-      "weaponName": "Heartstriker, Incarnation of Eternal Damnation",
-      "price": 4672.10
+      "weaponName": "Death's Sigh, Flatbow of Desecration",
+      "price": 4672.18
     },
     {
       "id": "w-8",
@@ -52,7 +52,7 @@
       "id": "w-9",
       "img": "./weapons/weapon-9.jpg",
       "weaponName": "Shadowsteel, Runed Blade of Necromancy",
-      "price": 5167.20
+      "price": 5167.22
     },
     {
       "id": "w-10",

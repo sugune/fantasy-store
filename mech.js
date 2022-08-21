@@ -7,6 +7,11 @@ const navMenu = document.querySelector('.nav-menu');
 const cartUp = document.querySelectorAll('.add-cart');
 const cartDown = document.querySelectorAll('.remove-cart');
 
+const weaponsContainer = document.querySelector('.weapons-container');
+const landsContainer = document.querySelector('.lands-container');
+const familiarsContainer = document.querySelector('.familiars-container');
+
+
 cartUp.forEach(add => {
   add.addEventListener('click', () => {
     add.classList.add('hide-cart-up');
@@ -36,9 +41,103 @@ menuBtn.addEventListener('click', () => {
   navMenu.classList.toggle('show-menu');
 });
 
+class Goods {
+  
+  async getWeapons() {
+    const res = await fetch('./json/weapons.json');
+    const data = await res.json();
+    return data.weapons;
+  }
+  
+  async getLands() {
+    const res = await fetch('./json/lands.json');
+    const data = await res.json();
+    return data.lands;
+  }
+  
+  async getFamiliars() {
+    try {
+      const res = await fetch('./json/familiars.json');
+      const data = await res.json();
+      return data.familiars;
+    } catch (err) {
+      console.log('error');
+    }
+  }
+}
+
+class UI {
+  
+  displayLands(goods) {
+    goods.forEach(good => {
+      const div = document.createElement('div');
+      div.classList.add('land-item');
+      div.classList.add('product-item');
+      div.innerHTML = `
+          <div class="land-img product-img" style="background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url('${good.img}');">
+            <img class="remove-cart" data-id="${good.id}" src="./images/remove-cart.png" alt="">
+            <img class="add-cart" data-id="${good.id}" src="./images/add-cart.png" alt="">
+            <i data-id="${good.id}" class="fa-solid fa-circle-info"></i>
+          </div>
+          <div class="land-content product-content">
+            <h4>${good.landName}</h4>
+            <h5><img src="./images/coin-2.png" alt=""> ${good.price.toLocaleString("en-US")}</h5>
+          </div>`;
+      landsContainer.appendChild(div);
+    });
+  }
+  
+  displayFamiliars(goods) {
+    goods.forEach(good => {
+      const div = document.createElement('div');
+      div.classList.add('familiar-item');
+      div.classList.add('product-item');
+      div.innerHTML = ` 
+      <div class="familiar-img product-img" style="background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url('${good.img}');">
+            <img class="remove-cart" data-id="${good.id}" src="./images/remove-cart.png" alt="">
+            <img class="add-cart" data-id="${good.id}" src="./images/add-cart.png" alt="">
+            <i data-id="${good.id}" class="fa-solid fa-circle-info"></i>
+          </div>
+          <div class="familiar-content product-content">
+            <h4>${good.familiarName}</h4>
+            <h5><img src="./images/coin-2.png" alt=""> ${good.price.toLocaleString('en-US')}</h5>
+          </div>`;
+      familiarsContainer.appendChild(div);
+    })
+  }
+  
+  displayWeapons(goods) {
+    goods.forEach(good => {
+      const div = document.createElement('div');
+      div.classList.add('product-item');
+      div.classList.add('weapon-item');
+      div.innerHTML = `
+      <div class="weapon-img product-img" style="background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url('${good.img}');">
+            <img class="remove-cart" data-id="${good.id}" src="./images/remove-cart.png" alt="">
+            <img class="add-cart" data-id="${good.id}" src="./images/add-cart.png" alt="">
+            <i data-id="${good.id}" class="fa-solid fa-circle-info"></i>
+          </div>
+          <div class="weapon-content product-content">
+            <h4>${good.weaponName}</h4>
+            <h5><img src="./images/coin-2.png" alt=""> ${good.price.toLocaleString('en-US')}</h5>
+          </div>`;
+      weaponsContainer.appendChild(div);
+    });
+  }
+  
+}
+
+class Storage {
+  
+}
 
 window.addEventListener('DOMContentLoaded', () => {
+  const ui = new UI();
+  const goods = new Goods();
   
+  goods.getLands().then((data) => ui.displayLands(data));
+  goods.getWeapons().then((data) => ui.displayWeapons(data));
+  goods.getFamiliars().then((data) => ui.displayFamiliars(data));
 });
 
 

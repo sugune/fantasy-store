@@ -9,13 +9,13 @@
     {
       "id": "l-2",
       "img": "./lands/land-2.jpg",
-      "landName": "Hidden River Of Atlantis",
+      "landName": "Hidden River of Atlantis",
       "price": 35678.69
     },
     {
       "id": "l-3",
       "img": "./lands/land-3.jpg",
-      "landName": "Frates, The Ancient City Of Dragons",
+      "landName": "Frates, The Ancient City of Dragons",
       "price": 88657.69
     },
     {
@@ -33,7 +33,7 @@
     {
       "id": "l-6",
       "img": "./lands/land-6.jpg",
-      "landName": "The Valley Of Life And Death",
+      "landName": "The Valley of Life and Death",
       "price": 35812.09
     },
     {
