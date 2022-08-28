@@ -3,61 +3,67 @@
     {
       "id": "w-1",
       "img": "./weapons/weapon-1.jpg",
-      "weaponName": "Excalibur",
-      "price": 6512.96
+      "name": "Excalibur",
+      "price": 6512.96,
+      "info": "this excalibur is a duplicate of King Arthur's. I made the Masters of Blacksmiths from heaven forge a million copies and sell them here, on this lower realm for quadruple the price."
     },
     {
       "id": "w-2",
       "img": "./weapons/weapon-2.jpg",
-      "weaponName": "Peacekeeper",
-      "price": 9765.69
+      "name": "Peacekeeper",
+      "price": 9765.69,
+      "info": "Peacekeeper is the sword of the soldiers of the southern continent of heaven who i one-sidedly obliterated into oblivion to preserve the peace i arduously constructed for 2 million years. though i go by the title 'Heavenly Merchant', the adjective 'Heavenly' isn't just there for the sake of decoration."
     },
     {
       "id": "w-3",
       "img": "./weapons/weapon-3.jpg",
-      "weaponName": "Devide and Conquer, Betrayers of Blessings",
-      "price": 12677.69
+      "name": "Devide and Conquer, Betrayers of Blessings",
+      "price": 12677.69,
+      "info": "This weapon is forged personally by me. i used the Fangs of a 500,000-year-old Divine Mithril Serpent, and the claws of a newborn Earthen Dragon, and also the the core of an 8th-circled Arch-Wizard who specialized in Earth Magic."
     },
     {
       "id": "w-4",
       "img": "./weapons/weapon-4.jpg",
-      "weaponName": "Decimation, Slayer of the Empty Void",
-      "price": 17009.26
+      "name": "Decimation, Slayer of the Empty Void",
+      "price": 17009.21,
+      "info": "This sword is the materialization of iniquity, immorality, evil, cruelty and atrocity of all the people who are living on the upper realm. <br> <br>Once every 1 million years, this sword creates its own wielder, the immortals called 'The Demon King' and everytime, ever since i existed, i have killed this Demon King for as many times a mortal can count to the end of his/her life span. <br> <br> I have existed since before the time created itself. the amount of Demon King corpse that i have in my inventory is enough to fill the concept of void. So i forged an unending amount of copies of the sword 'Decimation, Slayer of the Empty Void'."
     },
     {
       "id": "w-5",
       "img": "./weapons/weapon-5.jpg",
-      "weaponName": "Thunderstorm Carver",
-      "price": 4657.04
+      "name": "Thunderstorm Carver",
+      "price": 4657.04,
+      "info": "Everytime i fart i am always accidentally destroying approximately 69 dimension. So i programmed my butt to forge 'Thunderstorm Carver' everytime i fart."
     },
     {
       "id": "w-6",
       "img": "./weapons/weapon-6.jpg",
-      "weaponName": "Bloodrage, Reaper of Ending Misery",
-      "price": 3677.11
+      "name": "Bloodrage, Reaper of Ending Misery",
+      "price": 3677.11,
+      "info": ""
     },
     {
       "id": "w-7",
       "img": "./weapons/weapon-7.jpg",
-      "weaponName": "Death's Sigh, Flatbow of Desecration",
+      "name": "Death's Sigh, Flatbow of Desecration",
       "price": 4672.18
     },
     {
       "id": "w-8",
       "img": "./weapons/weapon-8.jpg",
-      "weaponName": "Ghostwalker, Token of Grace",
+      "name": "Ghostwalker, Token of Grace",
       "price": 6518.09
     },
     {
       "id": "w-9",
       "img": "./weapons/weapon-9.jpg",
-      "weaponName": "Shadowsteel, Runed Blade of Necromancy",
+      "name": "Shadowsteel, Runed Blade of Necromancy",
       "price": 5167.22
     },
     {
       "id": "w-10",
       "img": "./weapons/weapon-10.jpg",
-      "weaponName": "Chaos",
+      "name": "Chaos",
       "price": 7179.08
     }
   ]

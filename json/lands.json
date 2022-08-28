@@ -3,55 +3,55 @@
     {
       "id": "l-1",
       "img": "./lands/land-1.jpg",
-      "landName": "Sacred Spirit Realm",
+      "name": "Sacred Spirit Realm",
       "price": 67980.67
     },
     {
       "id": "l-2",
       "img": "./lands/land-2.jpg",
-      "landName": "Hidden River of Atlantis",
+      "name": "Hidden River of Atlantis",
       "price": 35678.69
     },
     {
       "id": "l-3",
       "img": "./lands/land-3.jpg",
-      "landName": "Frates, The Ancient City of Dragons",
+      "name": "Frates, The Ancient City of Dragons",
       "price": 88657.69
     },
     {
       "id": "l-4",
       "img": "./lands/land-4.jpg",
-      "landName": "Sky Towering Pagoda",
+      "name": "Sky Towering Pagoda",
       "price": 50643.76
     },
     {
       "id": "l-5",
       "img": "./lands/land-5.jpg",
-      "landName": "Heaven's Northern Continent",
+      "name": "Heaven's Northern Continent",
       "price": 134569.76
     },
     {
       "id": "l-6",
       "img": "./lands/land-6.jpg",
-      "landName": "The Valley of Life and Death",
+      "name": "The Valley of Life and Death",
       "price": 35812.09
     },
     {
       "id": "l-7",
       "img": "./lands/land-7.jpg",
-      "landName": "Dwarven Kingdom",
+      "name": "Dwarven Kingdom",
       "price": 58743.78
     },
     {
       "id": "l-8",
       "img": "./lands/land-8.jpg",
-      "landName": "Elven City",
+      "name": "Elven City",
       "price": 43768.99
     },
     {
       "id": "l-9",
       "img": "./lands/land-9.jpg",
-      "landName": "Goblin Trench (free)",
+      "name": "Goblin Trench (free)",
       "price": 0
     }
   ]
