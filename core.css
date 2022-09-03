@@ -153,8 +153,9 @@ Navbar
   transform: translateY(-50%);
   background-color: var(--primary-color-300);
   background-color: #D61C4E;
+  color: #333;
   color: var(--primary-color-300);
-  border-radius: 5px;
+  border-radius: 7px;
   padding: .3rem .2rem;
   font-size: .8rem;
   font-weight: 700;
@@ -734,7 +735,7 @@ cart
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
   font-size: 1.8rem;
-  margin-top: .3rem;
+  margin-top: 1rem;
 }
 
 .cart-container {
@@ -947,6 +948,19 @@ cart
 end of cart
 --------
 */
+/* 
+--------
+stuff
+--------
+*/
+.index-body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+
+
 
 
 

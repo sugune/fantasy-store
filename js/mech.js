@@ -12,7 +12,7 @@ const cartEmpty = document.querySelector('.empty');
 
 const menuBtn = document.querySelector('.menu-btn');
 const navMenu = document.querySelector('.nav-menu');
-const navbar = document.querySelector('.navbar-store');
+const navbar = document.querySelector('.navbar');
 const links = [...document.querySelectorAll('.nav-menu a')].slice(0, -1);
 
 const weaponsContainer = document.querySelector('.weapons-container');
@@ -23,7 +23,9 @@ const familiarsContainer = document.querySelector('.familiars-container');
 
 
 let allGoods = [];
-let allCart = [];
+let allCart = localStorage.getItem('cart') ?
+  JSON.parse(localStorage.getItem('cart')) :
+  [];
 
 class Goods {
 
@@ -58,7 +60,7 @@ class UI {
       div.classList.add('land-item');
       div.classList.add('product-item');
       div.innerHTML = `
-      <div class="land-img product-img" style="background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url('${good.img}');">
+      <div class="land-img product-img" style="background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%), url('${good.img}');">
       <img class="remove-cart" data-id="${good.id}" src="./images/remove-cart.png" alt="">
       <img class="add-cart" data-id="${good.id}" src="./images/add-cart.png" alt="">
       <i data-id="${good.id}" class="fa-solid fa-circle-info"></i>
@@ -78,7 +80,7 @@ class UI {
       div.classList.add('familiar-item');
       div.classList.add('product-item');
       div.innerHTML = `
-      <div class="familiar-img product-img" style="background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url('${good.img}');">
+      <div class="familiar-img product-img" style="background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%), url('${good.img}');">
       <img class="remove-cart" data-id="${good.id}" src="./images/remove-cart.png" alt="">
       <img class="add-cart" data-id="${good.id}" src="./images/add-cart.png" alt="">
       <i data-id="${good.id}" class="fa-solid fa-circle-info"></i>
@@ -98,7 +100,7 @@ class UI {
       div.classList.add('product-item');
       div.classList.add('weapon-item');
       div.innerHTML = `
-      <div class="weapon-img product-img" style="background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url('${good.img}');">
+      <div class="weapon-img product-img" style="background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%), url('${good.img}');">
       <img class="remove-cart" data-id="${good.id}" src="./images/remove-cart.png" alt="">
       <img class="add-cart" data-id="${good.id}" src="./images/add-cart.png" alt="">
       <i data-id="${good.id}" class="fa-solid fa-circle-info"></i>
@@ -206,8 +208,18 @@ class UI {
       good.amount = 1;
       return good;
     })
+    
     const cartUp = document.querySelectorAll('.add-cart');
     const cartDown = document.querySelectorAll('.remove-cart');
+    
+    if (allCart.length > 0) {
+      this.displayCartItems(allCart);
+      this.displayCartValue(allCart);
+      this.displayCartReceipt(allCart);
+      this.displayCartUI();
+      this.displayRemoveCart(allCart, cartUp);
+    }
+    
     this.cartBtnsToggle();
     this.cartShowHide();
     this.swapAddRemove();
@@ -218,9 +230,7 @@ class UI {
         const object = allGoods.find(good => good.id === id);
         allCart.push(object)
         if(allCart.length > 0) {
-          cartTotalContainer.classList.add('total-visible');
-          cartEmpty.classList.add('hide-empty');
-          cartTotalAmount.classList.add('item-flex');
+          this.displayCartUI();
         }
         Storage.save(allCart);
         this.displayCartItems(allCart);
@@ -230,9 +240,12 @@ class UI {
       });
     });
     
+    
     cartDown.forEach(remove => {
       remove.addEventListener('click', () => {
         const id = remove.dataset.id;
+        const object = allCart.find(item => item.id === id);
+        object.amount = 1;
         allCart = allCart.filter(item => item.id !== id);
         if(allCart.length <= 0) {
           cartTotalContainer.classList.remove('total-visible');
@@ -247,14 +260,33 @@ class UI {
         this.displayCartItems(allCart);
         this.displayCartValue(allCart);
         this.displayCartReceipt(allCart);
+        Storage.save(allCart);
       });
     });
     
   }
 
+  displayCartUI() {
+    cartTotalContainer.classList.add('total-visible');
+    cartEmpty.classList.add('hide-empty');
+    cartTotalAmount.classList.add('item-flex');
+  }
+  
+  displayRemoveCart(allCart, removeCart) {
+    removeCart.forEach(remove => {
+      allCart.forEach(cart => {
+        if (cart.id === remove.dataset.id) {
+          remove.classList.add('hide-cart-up');
+          remove.previousElementSibling.classList.add('show-cart-down');
+        }
+      })
+    })
+  }
+  
   displayCartItems(cart) {
     let items = [];
     cart.forEach(item => {
+      let flag = item.amount <= 1 ? 'cart-unclick' : 'none';
       const element = ` 
           <div class="cart-item">
           <div class="cart-img" style="background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url('${item.img}');">
@@ -262,17 +294,53 @@ class UI {
           <p class="item-name">${item.name}</p>
           <h5 class="amount">${item.amount}</h5>
           <div class="chevrons">
-          <i data-id="${item.id}" class="fa-solid fa-chevron-left"></i>
+          <i data-id="${item.id}" class="fa-solid fa-chevron-left ${flag}"></i>
           <i data-id="${item.id}" class="fa-solid fa-chevron-right"></i>
           </div>
           </div>
-          <h5 class="item-price"><img src="./images/coin-2.png" alt=""> <span class="price" >${item.price.toLocaleString('en-US')}</span></h5>
+          <h5 class="item-price"><img src="./images/coin-2.png" alt=""> <span data-id="${item.id}" class="price" >${(item.price * item.amount).toLocaleString('en-US')}</span></h5>
           </div>`;
       items.push(element);
     })
     cartContainer.innerHTML = items.join('');
     const remove = cartContainer.querySelectorAll('.remove');
+    const leftChevron = cartContainer.querySelectorAll('.fa-chevron-left');
+    const rightChevron = cartContainer.querySelectorAll('.fa-chevron-right');
     this.removeFunctionality(remove);
+    this.leftChevron(leftChevron);
+    this.rightChevron(rightChevron);
+  }
+  
+  leftChevron(leftChevron) {
+    leftChevron.forEach(left => {
+      left.addEventListener('click', (e) => {
+        const id = left.dataset.id;
+        let object = allCart.find(item => item.id === id);
+        object.amount -= 1;
+        this.displayCartItems(allCart);
+        this.displayCartValue(allCart);
+        this.displayCartReceipt(allCart);
+        Storage.save(allCart)
+        //if (object.amount <= 0) {
+         // left.classList.add('cart-unclick');
+        //}
+      })
+    })
+  }
+  
+  rightChevron(rightChevron) {
+    rightChevron.forEach(right => {
+      right.addEventListener('click', () => {
+        const id = right.dataset.id;
+        let object = allCart.find(item => item.id === id);
+        object.amount += 1;
+        this.displayCartItems(allCart);
+        this.displayCartValue(allCart);
+        this.displayCartReceipt(allCart);
+        Storage.save(allCart);
+        right.previousElementSibling.classList.remove('cart-unclick')
+      });
+    });
   }
   
   removeFunctionality(remove) {
@@ -281,6 +349,8 @@ class UI {
     remove.forEach(rem => {
       rem.addEventListener('click', () => {
         const id = rem.dataset.id;
+        const object = allCart.find(item => item.id === id);
+        object.amount = 1;
         allCart = allCart.filter(item => item.id !== id);
         if(allCart.length <= 0) {
           cartTotalContainer.classList.remove('total-visible');
@@ -290,6 +360,7 @@ class UI {
         this.displayCartItems(allCart);
         this.displayCartValue(allCart);
         this.displayCartReceipt(allCart);
+        Storage.save(allCart);
         
         cartDown.forEach(cartRemove => {
           if(cartRemove.dataset.id === id) {
@@ -311,8 +382,8 @@ class UI {
     cart.forEach(item => {
       const element = `              
           <h5 class="receipt-name">--<span>${item.name}</span></h5>
-          <h5 class="receipt-amount">${item.amount}</h5>
-          <h5 class="receipt-price"><img src="./images/coin-2.png" alt=""> <span class="rec-price">${item.price.toLocaleString('en-US')}</span></h5>`;
+          <h5 class="receipt-amount">${item.amount}x</h5>
+          <h5 class="receipt-price"><img src="./images/coin-2.png" alt=""> <span class="rec-price">${(item.price * item.amount).toLocaleString('en-US')}</span></h5>`;
       items.push(element);
     });
     cartReceipt.innerHTML = items.join('');
@@ -382,6 +453,16 @@ class UI {
         //menuBtn.classList.remove('menu-btn-unclick');
       });
   }
+  
+  displayStorage() {
+    const storage = localStorage.getItem('cart') ?
+      JSON.parse(localStorage.getItem('cart')) :
+      [];
+    
+    this.displayCartItems(storage);
+    this.displayCartValue(storage);
+    this.displayCartReceipt(storage);
+  }
 
 }
 
@@ -404,3 +485,11 @@ window.addEventListener('DOMContentLoaded', () => {
     ui.cartFunctionality();
   });
 });
+
+
+
+
+
+
+
+
